@@ -1,0 +1,17 @@
+
+
+#pussy_patrol_test_page:  # Je laisse celui ci pour l'exemple des chemins mais il ne pointe vers rien
+#    pattern:  /hello/{name}
+#    defaults: { _controller: PussyPatrolMainBundle:Default:test }
+
+pussy_patrol_pistaches:
+    pattern:  /users/{id}
+    defaults: { _controller: PussyPatrolMainBundle:Users:profile }
+
+pussy_patrol_cacahuetes:
+    pattern:  /users
+    defaults: { _controller: PussyPatrolMainBundle:Users:list }
+
+pussy_patrol_main_homepage:
+    pattern:  /
+    defaults: { _controller: PussyPatrolMainBundle:Index:index }

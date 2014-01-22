@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf8'/>
+	<title>{{user.pseudo}}</title>
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}"/>
+</head>
+<body>
+
+<img class="logo" src="{{ asset('images/pp.png') }}" alt=''/>
+
+<h1 class='titre'>{{user.pseudo}}</h1>
+
+<p>{{user.mail}}</p>
+<p>{{user.pass}}</p>
+
+<a href="{{ path('pussy_patrol_main_homepage') }}">Lien vers
+l'acceuil</a>
+
+</body>
+</html>

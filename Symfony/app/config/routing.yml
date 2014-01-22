@@ -1,0 +1,4 @@
+pussy_patrol_main:
+    resource: "@PussyPatrolMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
