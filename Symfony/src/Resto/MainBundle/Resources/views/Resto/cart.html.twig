@@ -1,10 +1,15 @@
+{% extends "RestoMainBundle::mainLayout.html.twig" %}
 
-
-
+{% block contenu %}
 <h1>Votre panier : </h1>
 
-
-
+<table>
+	<tr><th>Nom de l'article</th><th>Quantité</th><th>Prix unitaire</th></tr>
+	{% for entree in panier %}
+		<tr><td> {{ entree.nom }} </td><td> {{ entree.quantite }} </td><td> {{ entree.prix }} </td></tr>
+	{% endfor %}
+		<tr><td></td><td>Total</td><td> {{ total }} </td>
+	</table>
 <hr/>
 
-<p>Total: {{ total }}</p>
+{% endblock %}
