@@ -4,8 +4,8 @@
 
 {% block contenu %}
 
-{% for resto in restos %}
-	<a href="{{ path('resto_resto',{'restoid':resto.id}) }}">{{ resto.nom }}</a>
+{% for restaurant in restos %}
+	<a href="{{ path('resto_resto',{'restoid':restaurant.id}) }}">{{ restaurant.nom }}</a>
 {% endfor %}
 
 {% endblock %}
