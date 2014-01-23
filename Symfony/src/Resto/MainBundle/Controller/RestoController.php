@@ -188,6 +188,24 @@ class RestoController extends Controller {
 
     }
 
+    public function totalAction()
+    {
+
+          $panier = $this->getPanier();
+        if(isset($panier))
+        {
+           
+
+        $total = $this->totalPanier();
+        }
+        else
+        {
+            $total = 0;
+        }
+
+        return $this->render('RestoMainBundle:Resto:totalPanier.html.twig', array('total' => $total));
+    }
+
 
     private function totalPanier()
     {
