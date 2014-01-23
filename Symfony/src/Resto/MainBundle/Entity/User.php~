@@ -127,44 +127,4 @@ class User extends BaseUser
     {
         return $this->tel;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->commentaires = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add commentaires
-     *
-     * @param \Resto\MainBundle\Entity\Commentaire $commentaires
-     * @return User
-     */
-    public function addCommentaire(\Resto\MainBundle\Entity\Commentaire $commentaires)
-    {
-        $this->commentaires[] = $commentaires;
-
-        return $this;
-    }
-
-    /**
-     * Remove commentaires
-     *
-     * @param \Resto\MainBundle\Entity\Commentaire $commentaires
-     */
-    public function removeCommentaire(\Resto\MainBundle\Entity\Commentaire $commentaires)
-    {
-        $this->commentaires->removeElement($commentaires);
-    }
-
-    /**
-     * Get commentaires
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getCommentaires()
-    {
-        return $this->commentaires;
-    }
 }
