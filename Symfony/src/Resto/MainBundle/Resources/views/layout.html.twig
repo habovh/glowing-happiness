@@ -3,12 +3,12 @@
     <title>Fast Lunch</title>
     <meta charset="UTF-8">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <!-- Mon CSS -->
-    <link rel="stylesheet" href="bootstrap/style.css">
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/favicon.png') }} " type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
   </head>
 
   <body>
@@ -54,7 +54,7 @@
                 <li class="divider-vertical"></li>
                 <li><button class="btn btn-danger" onclick="self.location.href='admin.php?a=logout'"><span class="icon-off"></span> Déconnexion</button></li>
                 <li class="divider-vertical"></li>
-                <p class="navbar-text pull-right">Connecté en tant que <a href="#" class="navbar-link">{{user.login}}</a></p>
+                <p class="navbar-text pull-right">Connecté en tant que <a href="#" class="navbar-link">user</a></p>
               </ul>-->
             </div>
           </div>
@@ -81,7 +81,7 @@
       <!-- FOOTER -->
       <hr>
       <footer>
-        <a href="http://iut-charlemagne.univ-lorraine.fr"><img style="float: left; width: 250px; heigt: 50px;" src="images/iut_ul.jpg" alt="http://iut-charlemagne.univ-lorraine.fr/"></a>
+        <a href="http://iut-charlemagne.univ-lorraine.fr"><img style="float: left; width: 250px; heigt: 50px;" src="{{ asset('images/iut_ul.jpg') }}" alt="http://iut-charlemagne.univ-lorraine.fr/"></a>
         <p style="float: right;">© Crazy Charly Day 2014</p>
       </footer>
 
