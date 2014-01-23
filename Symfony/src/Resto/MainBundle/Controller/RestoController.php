@@ -12,7 +12,7 @@ class RestoController extends Controller {
 
     public function themeAction($themeid) 
     {
-        $repository = $this->getDoctrine()->getManager->getRepository('RestoMainBundle:theme');
+        $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
         $restos = $repository->getRestos();
 
     	return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
