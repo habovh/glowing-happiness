@@ -23,10 +23,16 @@ class Restaurant
 
 
     /**
-    * @ORM\ManyToOne(targetEntity="Resto\MainBundle\Entity\Theme", inversedBy="theme"))
+    * @ORM\ManyToOne(targetEntity="Resto\MainBundle\Entity\Theme", inversedBy="theme")
     * @ORM\JoinColumn(nullable=false)
     */
     private $theme;
+
+
+    /**
+    * @ORM\OneToMany(targetEntity="Resto\MainBundle\Entity\Plat", mappedBy="plat")
+    */
+    private $plats;
 
     /**
      * @var string
@@ -241,5 +247,45 @@ class Restaurant
     public function getTheme()
     {
         return $this->theme;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->plats = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add plats
+     *
+     * @param \Resto\MainBundle\Entity\Plat $plats
+     * @return Restaurant
+     */
+    public function addPlat(\Resto\MainBundle\Entity\Plat $plats)
+    {
+        $this->plats[] = $plats;
+
+        return $this;
+    }
+
+    /**
+     * Remove plats
+     *
+     * @param \Resto\MainBundle\Entity\Plat $plats
+     */
+    public function removePlat(\Resto\MainBundle\Entity\Plat $plats)
+    {
+        $this->plats->removeElement($plats);
+    }
+
+    /**
+     * Get plats
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPlats()
+    {
+        return $this->plats;
     }
 }

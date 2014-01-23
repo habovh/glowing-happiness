@@ -1,9 +1,8 @@
-resto.html.twig<br/>
-
-{% extends RestoMainBundle::layout.html.twig %}
+{% extends "RestoMainBundle::layout.html.twig" %}
 
 {% block contenu %}
 
+<<<<<<< HEAD
 	{{ resto.nom }}
 
 	{{ resto.adresse }}
@@ -15,5 +14,13 @@ resto.html.twig<br/>
 	{{ resto.note }}
 
 	{{ render(controller("RestoMainBundle:Resto:plat")) }}
+=======
+<!-- RESTO -->
+<div class="hero-unit">
+	<h1>{{ resto.titre }}</h1>
+	<hr>
+	<p>{{ resto.description }}</p>
+</div>
+>>>>>>> 99d7bf66b4ce7c67253c8b1864e2ca9b3c92a21e
 
 {% endblock %}

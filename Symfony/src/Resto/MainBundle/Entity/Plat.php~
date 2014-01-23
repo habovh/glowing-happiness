@@ -159,27 +159,4 @@ class Plat
     {
         return $this->photo;
     }
-
-    /**
-     * Set restaurant
-     *
-     * @param \Resto\MainBundle\Entity\Restaurants $restaurant
-     * @return Plat
-     */
-    public function setRestaurant(\Resto\MainBundle\Entity\Restaurants $restaurant)
-    {
-        $this->restaurant = $restaurant;
-
-        return $this;
-    }
-
-    /**
-     * Get restaurant
-     *
-     * @return \Resto\MainBundle\Entity\Restaurants 
-     */
-    public function getRestaurant()
-    {
-        return $this->restaurant;
-    }
 }

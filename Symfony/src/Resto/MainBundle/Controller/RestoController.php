@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Resto\MainBundle\Entity\Theme;
 use Resto\MainBundle\Entity\Restaurant;
+use Resto\MainBundle\Entity\Plat;
 
 class RestoController extends Controller {
 
