@@ -36,11 +36,27 @@ class Theme
     private $description;
 
     /**
-    * @ORM\OneToMany(targetEntity="Resto\MainBundle\Entity\Restaurant", mappedBy="restaurant")
+    * @ORM\OneToMany(targetEntity="Resto\MainBundle\Entity\Restaurant", mappedBy="theme")
     */
-
     private $restaurants;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
+     * 
+     */
+    private $image;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->restaurants = new \Doctrine\Common\Collections\ArrayCollection();
+
+        $this->image = "defaut.png";
+    }
 
     /**
      * Get id
@@ -96,5 +112,61 @@ class Theme
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Add restaurants
+     *
+     * @param \Resto\MainBundle\Entity\Restaurant $restaurants
+     * @return Theme
+     */
+    public function addRestaurant(\Resto\MainBundle\Entity\Restaurant $restaurants)
+    {
+        $this->restaurants[] = $restaurants;
+
+        return $this;
+    }
+
+    /**
+     * Remove restaurants
+     *
+     * @param \Resto\MainBundle\Entity\Restaurant $restaurants
+     */
+    public function removeRestaurant(\Resto\MainBundle\Entity\Restaurant $restaurants)
+    {
+        $this->restaurants->removeElement($restaurants);
+    }
+
+    /**
+     * Get restaurants
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRestaurants()
+    {
+        return $this->restaurants;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Theme
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

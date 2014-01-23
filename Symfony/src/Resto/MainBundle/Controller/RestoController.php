@@ -15,7 +15,7 @@ class RestoController extends Controller {
     }
 
 
-    public function themeAction($themeid) 
+    public function themeAction($themeid)
     {
         if(($themeid == -1) || ($themeid == ''))
         {
@@ -85,8 +85,21 @@ class RestoController extends Controller {
     }
 
 
+
+    public function ajouteArticleAction($id)  // Ajoute un article ( plat ) au panier
+    {
+        $$session = $this->getRequest()->getSession();
+        if(!$session->has('panier'))
+        {
+           $session->set('panier' => array('numprod' => array(), 'qte' => array()));
+        }
+    }
+
+
     private function getCurrentUser()
     {
         return $this->container->get('security.context')->getToken()->getUser();
     }
+
+
 }

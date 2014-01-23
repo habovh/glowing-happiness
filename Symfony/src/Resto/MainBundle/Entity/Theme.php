@@ -41,11 +41,21 @@ class Theme
     private $restaurants;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
+     * 
+     */
+    private $image;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->restaurants = new \Doctrine\Common\Collections\ArrayCollection();
+
+        $this->image = "defaut.png";
     }
 
     /**
@@ -135,5 +145,28 @@ class Theme
     public function getRestaurants()
     {
         return $this->restaurants;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Theme
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }
