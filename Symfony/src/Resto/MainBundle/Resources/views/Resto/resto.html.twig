@@ -27,12 +27,12 @@
 				 	<p>
 
 
-				 		<a class="btn btn-primary" href="{{ path('resto_ajoute_article',{'id': unplat.id, 'quantite':1}) }}">Ajouter au panier</a>
+				 		<a class="btn btn-primary btn-ajoute-panier" href="#" >Ajouter au panier</a>
 				 
 
 
 				 		<div class="input-append spinner" data-trigger="spinner">
-						<input type="text" value="1" data-rule="quantity" name="quantite">
+						<input class='input-add-value' id-plat='{{ unplat.id }}' type="text" value="1" data-rule="quantity" name="quantite">
 						<div class="add-on"> 
 							<a href="javascript:;" class="icon-arrow-up" data-spin="up"><i class="icon-sort-up"></i></a> 
 							<a href="javascript:;" class="icon-arrow-down" data-spin="down"><i class="icon-sort-down"></i></a> 
