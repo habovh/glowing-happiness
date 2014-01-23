@@ -10,12 +10,12 @@ class RestoController extends Controller {
         return $this->render('RestoMainBundle:Resto:index.html.twig');
     }
 
-<<<<<<< HEAD
+
     public function themeAction($themeid) 
     {
         if($themeid == -1)
         {
-             $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
+            $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
             $themes = $repository->findAll();
 
             return $this->render('RestoMainBundle:Resto:theme.html.twig', array('themes' => $themes));
@@ -27,15 +27,7 @@ class RestoController extends Controller {
 
         return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
         }
-       
-=======
-    public function themeAction($themeid) {
 
-        $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
-        $restos = $repository->getRestos();
-
-    	return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
->>>>>>> a7855bb0a6dc734e99e4f1a36310a032d8832c3b
     }
 
     public function restoAction($restoid) {
