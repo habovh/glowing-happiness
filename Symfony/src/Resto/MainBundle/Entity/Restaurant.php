@@ -30,7 +30,7 @@ class Restaurant
 
 
     /**
-    * @ORM\OneToMany(targetEntity="Resto\MainBundle\Entity\Plat", mappedBy="plat")
+    * @ORM\OneToMany(targetEntity="Resto\MainBundle\Entity\Plat", mappedBy="restaurant")
     */
     private $plats;
 
