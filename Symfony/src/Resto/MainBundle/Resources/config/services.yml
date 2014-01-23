@@ -5,3 +5,10 @@ services:
 #    resto_main.example:
 #        class: %resto_main.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+
+    resto_user.registration.form.type:
+        class: Resto\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: acme_user_registration }
