@@ -1,3 +1,9 @@
 resto_main_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: RestoMainBundle:Default:index }
+    pattern:  /
+    defaults: { _controller: RestoMainBundle:Resto:index }
+
+resto_theme:
+    pattern: /theme/{themeid}
+    defaults: { _controller: RestoMainBundle:Resto:theme }
+    requirements:
+        themeid: \d+
