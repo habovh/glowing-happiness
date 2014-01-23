@@ -52,7 +52,7 @@ class RestoController extends Controller {
         $panier = $this->getPanier();
 
         $total = $this->totalPanier();
-        var_dump($panier);
+        
 
         return $this->render('RestoMainBundle:Resto:cart.html.twig', array('panier' => $panier , 'total' => $total));
 
