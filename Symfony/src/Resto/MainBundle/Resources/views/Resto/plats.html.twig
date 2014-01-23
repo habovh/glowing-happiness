@@ -2,9 +2,7 @@
 
 {% block lesplats %}
 {% for unplat in plats %}
-<p>
-	{{ (unplat.nom) }} {{ unplat.description }} {{ unplat.prix }}
-</p>
+	{{ unplat.nom }} {{ unplat.description }} {{ unplat.prix }}
 {% endfor %}
 
 {% endblock %}

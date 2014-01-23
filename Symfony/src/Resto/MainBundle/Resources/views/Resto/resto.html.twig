@@ -11,9 +11,14 @@
 
 <div class="row-fluid">
 	<div class="span12">
-
-	{% block lesplats %}
-	{% endblock %}
+		<form>
+			<table>
+				<tr><th>Nom du plat</th><td>Description</td><td>Prix</td></tr>
+			{% for unplat in plats %}
+				<tr><th>{{ unplat.nom }}</th><td>{{ unplat.description }}</td><td> {{ unplat.prix }} €</td></tr>
+			{% endfor %}
+			</table>
+		</form>
 	
 	</div>
 </div>
