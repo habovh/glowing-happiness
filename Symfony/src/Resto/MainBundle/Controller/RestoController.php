@@ -17,7 +17,7 @@ class RestoController extends Controller {
 
     public function themeAction($themeid) 
     {
-        if($themeid == -1)
+        if(($themeid == -1) || ($themeid == ''))
         {
             $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:Theme');
             $themes = $repository->findAll();
@@ -27,8 +27,9 @@ class RestoController extends Controller {
         else
         {
              $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:Theme');
+             
              $theme = $repository->find($themeid);
-
+             var_dump($theme);
              $restos = $theme->getRestaurants();
 
 
