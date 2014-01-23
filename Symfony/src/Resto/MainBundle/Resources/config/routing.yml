@@ -1,4 +1,4 @@
-resto_main_homepage:
+resto_homepage:
     pattern:  /
     defaults: { _controller: RestoMainBundle:Resto:index }
 
@@ -7,3 +7,9 @@ resto_theme:
     defaults: { _controller: RestoMainBundle:Resto:theme }
     requirements:
         themeid: \d+
+
+resto_resto:
+    pattern: /resto/{restoid}
+    defaults: { _controller: RestoMainBundle:Resto:resto }
+    requirements:
+        restoid: \d+

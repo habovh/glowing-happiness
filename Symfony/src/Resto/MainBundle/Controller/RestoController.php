@@ -13,4 +13,8 @@ class RestoController extends Controller {
     public function themeAction($themeid) {
     	return $this->render('RestoMainBundle:Resto:theme.html.twig', array('themeid' => $themeid));
     }
+
+    public function restoAction($restoid) {
+    	return $this->render('RestoMainBundle:Resto:resto.html.twig', array('restoid' => $restoid));
+    }
 }
