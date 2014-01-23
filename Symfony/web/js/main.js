@@ -14,8 +14,11 @@ function bind_buttons_add_panier () {
 
 		var $this = $(this);
 
-		$this.on('click', function(){
+		$this.on('click', function(event){
 
+
+			event.preventDefault();
+			event.stopPropagation();
 
 			var $input = $(this).parent().parent().find('.input-add-value');
 			var quantitee = $input.val();
@@ -24,8 +27,8 @@ function bind_buttons_add_panier () {
 
 			
 
-			console.log (quantitee);
-			console.log(id);
+			/*console.log (quantitee);
+			console.log(id);*/
 
 			var request = $.ajax({
 
