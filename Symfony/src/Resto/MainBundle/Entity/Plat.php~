@@ -26,7 +26,7 @@ class Plat
     * @ORM\ManyToOne(targetEntity="Resto\MainBundle\Entity\Restaurant", inversedBy="restaurant")
     * @ORM\JoinColumn(nullable=false)
     */
-    private $restaurants;
+    private $restaurant;
 
     /**
      * @var string
@@ -160,13 +160,15 @@ class Plat
         return $this->photo;
     }
 
+  
+
     /**
      * Set restaurant
      *
-     * @param \Resto\MainBundle\Entity\Restaurants $restaurant
+     * @param \Resto\MainBundle\Entity\Restaurant $restaurant
      * @return Plat
      */
-    public function setRestaurant(\Resto\MainBundle\Entity\Restaurants $restaurant)
+    public function setRestaurant(\Resto\MainBundle\Entity\Restaurant $restaurant)
     {
         $this->restaurant = $restaurant;
 
@@ -176,7 +178,7 @@ class Plat
     /**
      * Get restaurant
      *
-     * @return \Resto\MainBundle\Entity\Restaurants 
+     * @return \Resto\MainBundle\Entity\Restaurant 
      */
     public function getRestaurant()
     {
