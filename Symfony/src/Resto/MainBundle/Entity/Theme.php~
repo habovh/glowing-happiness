@@ -41,13 +41,6 @@ class Theme
 
     private $restaurants;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->restaurants = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Get id
@@ -103,38 +96,5 @@ class Theme
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * Add restaurants
-     *
-     * @param \Resto\MainBundle\Entity\Restaurant $restaurants
-     * @return Theme
-     */
-    public function addRestaurant(\Resto\MainBundle\Entity\Restaurant $restaurants)
-    {
-        $this->restaurants[] = $restaurants;
-
-        return $this;
-    }
-
-    /**
-     * Remove restaurants
-     *
-     * @param \Resto\MainBundle\Entity\Restaurant $restaurants
-     */
-    public function removeRestaurant(\Resto\MainBundle\Entity\Restaurant $restaurants)
-    {
-        $this->restaurants->removeElement($restaurants);
-    }
-
-    /**
-     * Get restaurants
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getRestaurants()
-    {
-        return $this->restaurants;
     }
 }

@@ -1,16 +1,15 @@
 {% extends "RestoMainBundle::layout.html.twig" %}
 
 {% block contenu %}
-
-{% for untheme in themes %}
 <div class="row-fluid themes">
+{% for untheme in themes %}
 	<div class="span4">
 	<img class="img-circle" alt="{{untheme.nom}}" style="width: 140px; height: 140px;" src="">
 	<h2>{{untheme.nom}}</h2>
 	<p>{{untheme.description}}</p>
 	<p><a class="btn" href="{{ path('resto_theme',{'themeid':untheme.id})}}">Plus de détails »</a></p>
 	</div>
-</div>
 {% endfor %}
+</div>
 
 {% endblock %}
