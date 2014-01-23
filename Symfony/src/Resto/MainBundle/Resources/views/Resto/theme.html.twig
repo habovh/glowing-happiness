@@ -1,6 +1,12 @@
 {% extends "RestoMainBundle::mainLayout.html.twig" %}
 
 {% block contenu %}
+<!-- FIL D'ARIANNE -->
+<div class="row-fluid arianne">
+	<div class="span12">
+	  <a href="{{ path('resto_homepage') }}">Accueil</a> > <a href="{{ path('resto_theme') }}">Thèmes</a> > {{ nomtheme }}
+	</div>
+</div>
 
 <div class="row-fluid restaurants">
 {% for restaurant in restos %}

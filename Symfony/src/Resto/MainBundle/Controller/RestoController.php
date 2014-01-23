@@ -56,7 +56,9 @@ class RestoController extends Controller {
 
              $restos = $theme->getRestaurants();
 
-             return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos, 'total' => $total));
+             $nomtheme = $theme->getNom();
+
+             return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos, 'total' => $total, 'nomtheme' => $nomtheme));
 
         }
 
@@ -78,8 +80,10 @@ class RestoController extends Controller {
         $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:Restaurant');
         $resto = $repository->find($restoid);
         $plats = $resto->getPlats();
+        $themeid = intval($resto->getTheme()->getId());
+        $nomtheme = $resto->getTheme()->getNom();
 
-    	return $this->render('RestoMainBundle:Resto:resto.html.twig', array('resto' => $resto, 'plats' => $plats, 'total' => $total));
+    	return $this->render('RestoMainBundle:Resto:resto.html.twig', array('resto' => $resto, 'plats' => $plats, 'total' => $total, 'themeid' => $themeid, 'nomtheme' => $nomtheme));
     }
 
     public function panierAction() {

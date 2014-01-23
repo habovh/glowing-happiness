@@ -2,6 +2,12 @@
 {% extends "RestoMainBundle::mainLayout.html.twig" %}
 
 {% block contenu %}
+<!-- FIL D'ARIANNE -->
+<div class="row-fluid arianne">
+	<div class="span12">
+	  <a href="{{ path('resto_homepage') }}">Accueil</a> > Thèmes
+	</div>
+</div>
 
 <div class="row-fluid themes">
 {% for untheme in themes %}

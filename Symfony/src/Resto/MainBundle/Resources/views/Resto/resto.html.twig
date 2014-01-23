@@ -3,6 +3,14 @@
 {% block contenu %}
 
 <!-- RESTO -->
+
+<!-- FIL D'ARIANNE -->
+<div class="row-fluid arianne">
+	<div class="span12">
+	  <a href="{{ path('resto_homepage') }}">Accueil</a> > <a href="{{ path('resto_theme') }}">Thèmes</a> > <a href="{{ path('resto_theme', { 'themeid': themeid }) }}">{{ nomtheme }}</a> > Restaurant
+	</div>
+</div>
+
 <div class="hero-unit">
 	<h1>{{ resto.nom }}</h1>
 	<p style="font-size: 0.6em; text-align: right;"><strong>Adresse : </strong>{{ resto.adresse }}</p>
