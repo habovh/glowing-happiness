@@ -1,4 +1,11 @@
 .header
 {
-	border-radius: 5px;
+	background-image: url('images/gradient.png');
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+.header img
+{
+	max-height: 200px;
+	width: 100%;
 }

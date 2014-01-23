@@ -18,12 +18,10 @@
 
       <!-- HEADER -->
       <div class="row-fluid header">
-        <div class="span7">
-          FAST LUNCH (image)
-        </div>
-
-        <div class="span5">
-          <button class="btn" onclick="self.location.href='#'"><span class="icon-shopping-cart"></span> Panier</button>
+        <div class="span12">
+          <a href="{{ path('resto_homepage') }}">
+            <img src="{{ asset('images/fastlunch-logo.png') }}">
+          </a>
         </div>
       </div>
 
@@ -45,17 +43,20 @@
                 <li><button class="btn btn-success" onclick="self.location.href='#'"><span class="icon-ok-sign"></span> Connexion</button></li>
                 <li class="divider-vertical"></li>
                 <li><button class="btn btn-info" onclick="self.location.href='#'"><span class="icon-plus-sign"></span> Inscription</button></li>
-                <li class="divider-vertical"></li><p class="navbar-text pull-right">Vous n'êtes pas connecté</p>
+                <li class="divider-vertical"></li>
+                <button class="btn" onclick="self.location.href='#'"><span class="icon-shopping-cart"></span> Panier</button>
               </ul>
-              <!-- SI CONNECTE
+              <p class="navbar-text pull-right">Vous n'êtes pas connecté</p>
+              <!-- SI CONNECTER
               <ul class="nav pull-right">
                 <li class="divider-vertical"></li>
                 <li><button class="btn btn-success" onclick="self.location.href='#'"><span class="icon-wrench"></span> Administration</button></li>
                 <li class="divider-vertical"></li>
                 <li><button class="btn btn-danger" onclick="self.location.href='#'"><span class="icon-off"></span> Déconnexion</button></li>
                 <li class="divider-vertical"></li>
-                <p class="navbar-text pull-right">Connecté en tant que <a href="#" class="navbar-link">user</a></p>
-              </ul>-->
+                <button class="btn" onclick="self.location.href='#'"><span class="icon-shopping-cart"></span> Panier</button>
+              </ul>
+              <p class="navbar-text pull-right">Connecté en tant que <a href="#" class="navbar-link">user</a></p>-->
             </div>
           </div>
         </div>

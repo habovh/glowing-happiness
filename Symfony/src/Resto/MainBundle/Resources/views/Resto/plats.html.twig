@@ -1,3 +1,8 @@
+{% extends "RestoMainBundle::resto.html.twig" %}
+
+{% block plats %}
 {% for plat in plats %}
 	{{ plat.nom }} {{ plat.description }} {{ plat.prix }}
 {% endfor %}
+
+{% endblock %}
