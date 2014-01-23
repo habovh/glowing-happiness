@@ -1,2 +1,19 @@
 resto.html.twig<br/>
-Affichage du restaurant numéro : {{ restoid }}, avec sa description et sa carte
+
+{% extends RestoMainBundle::layout.html.twig %}
+
+{% block contenu %}
+
+	{{ resto.titre }}
+
+	{{ resto.adresse }}
+
+	{{ resto.description }}
+
+	{{ resto.contact }}
+
+	{{ resto.note }}
+
+	{% block plats %}
+
+{% endblock %}
