@@ -19,18 +19,18 @@ class RestoController extends Controller {
     {
         if($themeid == -1)
         {
-            $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
+            $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:Theme');
             $themes = $repository->findAll();
 
             return $this->render('RestoMainBundle:Resto:themes.html.twig', array('themes' => $themes));
         }
         else
         {
-             $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
+             $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:Theme');
              $theme = $repository->find($themeid);
 
              $restos = $theme->getRestaurants();
-
+             var_dump($restos);
         return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
         }
 
@@ -38,7 +38,7 @@ class RestoController extends Controller {
 
     public function restoAction($restoid) {
 
-        $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:restaurant');
+        $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:Restaurant');
         $resto = $repository->find($restoid);
 
     	return $this->render('RestoMainBundle:Resto:resto.html.twig', array('resto' => $resto));
@@ -211,7 +211,7 @@ class RestoController extends Controller {
 
     public function userAction($userid) {
 
-        $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:user');
+        $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:User');
         $user = $repository -> find($userid);
 
     	return $this->render('RestoMainBundle:Resto:user.html.twig', array('user' => $user));
@@ -225,7 +225,7 @@ class RestoController extends Controller {
     {
         if($id == -1)
         {
-            $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:restaurant');
+            $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:Restaurant');
             $plats = $repository->getPlats();
 
             return $this->render('RestoMainBundle:Resto:plats.html.twig', array('plats' => $plats));
