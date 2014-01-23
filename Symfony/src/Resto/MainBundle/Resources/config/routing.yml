@@ -28,7 +28,7 @@ restu_profile:
     pattern: /profile/
     defaults: { _controller: RestoMainBundle:Resto:profile }
 
-
+    
 
 
 fos_user_security:
