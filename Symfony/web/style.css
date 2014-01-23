@@ -18,12 +18,18 @@
 {
 	text-align: center;
 	min-width: 200px;
+	padding: 4px;
 }
 .row-fluid [class*="span"]
 {
 	margin-left: 0px;
 }
-
+.restaurant
+{
+	text-align: center;
+	min-width: 200px;
+	padding: 4px;
+}
 .plats
 {
 	text-align: center;
