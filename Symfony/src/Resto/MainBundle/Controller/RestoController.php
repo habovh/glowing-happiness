@@ -29,7 +29,7 @@ class RestoController extends Controller {
              $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:Theme');
              
              $theme = $repository->find($themeid);
-             
+
              $restos = $theme->getRestaurants();
 
 
