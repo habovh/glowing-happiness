@@ -29,7 +29,7 @@ function bind_buttons_add_panier () {
 
 			var request = $.ajax({
 
-				url: '/ajouteArticle/'+id+'/'+quantitee+'',
+				url: 'http://pussypatrol.tk/app.php/ajouteArticle/'+id+'/'+quantitee+'',
 
 			});
 
