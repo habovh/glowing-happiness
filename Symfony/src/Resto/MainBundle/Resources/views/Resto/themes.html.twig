@@ -5,11 +5,9 @@
 <div class="row-fluid themes">
 {% for untheme in themes %}
 	<div class="span4 theme">
-<<<<<<< HEAD
+
 	<img class="img-circle" alt="{{ untheme.nom }}" style="width: 140px; height: 140px;" src="{{ asset('images/themes/' ~ untheme.nom  ~ '.png') }}">
-=======
-	<img class="img-circle" alt="{{ untheme.nom }}" style="width: 140px; height: 140px;" src="{{ asset('images/themes/{{ untheme.nom }}.png') }}">
->>>>>>> cdf1d1053acaea81c716c32bf5b2c599afde02f2
+
 	<h2>{{untheme.nom}}</h2>
 	<p>{{untheme.description}}</p>
 	<p><a class="btn" href="{{ path('resto_theme',{'themeid':untheme.id})}}">Voir les restaurants »</a></p>
