@@ -32,8 +32,6 @@ class RestoController extends Controller {
 
              $restos = $theme->getRestaurants();
 
-
-
              return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
 
         }
@@ -49,6 +47,15 @@ class RestoController extends Controller {
     }
 
     public function cartAction() {
+
+        $user = $this->getCurrentUser();
+
+        if (is_object($user) || $user instanceof UserInterface) {
+            var_dump($user);
+        }
+
+
+        var_dump($user->getUsername());
 
       
 
@@ -74,5 +81,11 @@ class RestoController extends Controller {
             return $this->render('RestoMainBundle:Resto:plats.html.twig', array('plats' => $plats));
         }
 
+    }
+
+
+    private function getCurrentUser()
+    {
+        return $this->container->get('security.context')->getToken()->getUser();
     }
 }

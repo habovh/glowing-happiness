@@ -1,0 +1,17 @@
+﻿Merge
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# rebase in progress; onto b21c0e2
+# You are currently rebasing branch 'master' on 'b21c0e2'.
+#   (all conflicts fixed: run "git rebase --continue")
+#
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   Symfony/src/Resto/MainBundle/Controller/RestoController.php
+#	modified:   Symfony/src/Resto/MainBundle/Resources/views/Resto/themes.html.twig
+#	new file:   csbnkffs.rpa.txt
+#	new file:   eb0xqvpk.qhs.txt
+#	new file:   tfexz1jc.4gx.txt
+#
+
