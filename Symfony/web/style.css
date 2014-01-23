@@ -17,4 +17,9 @@
 .theme
 {
 	text-align: center;
+	min-width: 200px;
+}
+.row-fluid [class*="span"] 
+{
+	margin-left: 0px;
 }
