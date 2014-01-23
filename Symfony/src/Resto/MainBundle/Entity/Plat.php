@@ -42,6 +42,12 @@ class Plat
      */
     private $prix;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo", type="string")
+     */
+    private $photo;
 
     /**
      * Get id
@@ -112,6 +118,7 @@ class Plat
         return $this;
     }
 
+
     /**
      * Get prix
      *
@@ -120,5 +127,29 @@ class Plat
     public function getPrix()
     {
         return $this->prix;
+    }
+
+    /**
+     * Set Photo
+     *
+     * @param float $Photo
+     * @return photo
+     */
+    public function setPhoto($Photo)
+    {
+        $this->photo = $Photo;
+
+        return $this;
+    }
+    
+
+    /**
+     * Get Photo
+     *
+     * @return float 
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
     }
 }
