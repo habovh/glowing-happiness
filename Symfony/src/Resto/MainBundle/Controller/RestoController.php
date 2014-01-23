@@ -32,9 +32,13 @@ class RestoController extends Controller {
 
              $restos = $theme->getRestaurants();
 
+<<<<<<< HEAD
 
 
              return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos);
+=======
+             return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
+>>>>>>> Correction d'une erreur
 
         }
 
