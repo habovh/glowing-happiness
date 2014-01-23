@@ -15,8 +15,15 @@ resto_resto:
         restoid: \d+
 
 resto_panier:
-    pattern: /cart/
-    defaults: { _controller: RestoMainBundle:Resto:cart }
+    pattern: /panier/
+    defaults: { _controller: RestoMainBundle:Resto:panier }
+
+resto_ajoute_article:
+    pattern: /ajouteArticle/{id}/{quantite}
+    defaults: { _controller: RestoMainBundle:Resto:panier }
+    requirements:
+        id: \d+
+        quantite: \d+
 
 resto_user:
     pattern: /user/{userid}

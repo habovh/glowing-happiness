@@ -47,20 +47,15 @@ class RestoController extends Controller {
     	return $this->render('RestoMainBundle:Resto:resto.html.twig', array('resto' => $resto, 'plats' => $plats));
     }
 
-    public function cartAction() {
+    public function panierAction() {
 
-        $user = $this->getCurrentUser();
+        $panier = $this->getPanier();
 
-        if (is_object($user) || $user instanceof UserInterface) {
-            var_dump($user);
-        }
+        $total = $this->totalPanier();
 
+        return $this->render('RestoMainBundle:Resto:cart.html.twig', array('panier' => ,$panier , 'total' => $total));
 
-        var_dump($user->getUsername());
-
-      
-
-    	return $this->render('RestoMainBundle:Resto:cart.html.twig');
+    	
     }
 
     public function userAction($userid) {
@@ -86,20 +81,81 @@ class RestoController extends Controller {
 
 
 
-    public function ajouteArticleAction($id)  // Ajoute un article ( plat ) au panier
+    public function ajouteArticleAction($id, $quantite)  // Ajoute un article ( plat ) au panier
     {
-        $$session = $this->getRequest()->getSession();
-        if(!$session->has('panier'))
-        {
-           $session->set('panier' => array('numprod' => array(), 'qte' => array()));
+        $panier = $this->getPanier();
+
+        $repo = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:Plat');
+
+
+        $plat = $repo->find($id);
+
+
+        if (!is_null($plat)) {
+            $panier[$id]['quantite'] = $quantite;
+            $panier[$id]['prix'] = $plat->getPrix();
+            $panier[$id]['nom'] = $plat->geNom();
+
         }
+
+
+
     }
 
+    public function supprimeArticleAction($id)  
+    {
+        
+        $panier = $this->getPanier();
+
+
+        if (array_key_exists($id, $session)) {  
+            unset($panier[$id]);
+        }
+
+
+    }
+
+
+    private function totalPanier()
+    {
+       
+
+        $panier = $this->getPanier();
+
+        
+        $total = 0;
+
+        foreach ($panier as $id => $attributs) {
+            if (!is_null($plat)){
+                $total += $attributs['prix'];
+            }
+        }
+
+        return $total;
+
+
+    }
 
     private function getCurrentUser()
     {
         return $this->container->get('security.context')->getToken()->getUser();
     }
 
+
+    private function getPanier()
+    {
+        $session = $this->getRequest()->getSession();
+        if(!$session->has('panier'))
+        {
+           $session->set('panier' => array(
+                'idprod' => array()  // indice 'quantite' : quantite / indice 'prix' : prix
+                )
+           );
+        }
+
+        $panier = $session->get('panier');
+
+        return $panier;
+    }
 
 }
