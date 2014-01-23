@@ -42,8 +42,9 @@ class RestoController extends Controller {
 
         $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:Restaurant');
         $resto = $repository->find($restoid);
+        $plats = $resto->getPlats();
 
-    	return $this->render('RestoMainBundle:Resto:resto.html.twig', array('resto' => $resto));
+    	return $this->render('RestoMainBundle:Resto:resto.html.twig', array('resto' => $resto, 'plats' => $plats));
     }
 
     public function cartAction() {
