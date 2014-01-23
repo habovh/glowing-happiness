@@ -12,10 +12,21 @@ class RestoController extends Controller {
 
     public function themeAction($themeid) 
     {
-        $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
-        $restos = $repository->getRestos();
+        if($themeid == -1)
+        {
+             $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
+            $themes = $repository->findAll();
 
-    	return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
+            return $this->render('RestoMainBundle:Resto:theme.html.twig', array('themes' => $themes));
+        }
+        else
+        {
+             $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
+             $restos = $repository->getRestos();
+
+        return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
+        }
+       
     }
 
     public function restoAction($restoid)
@@ -27,6 +38,8 @@ class RestoController extends Controller {
     }
 
     public function cartAction() {
+
+
     	return $this->render('RestoMainBundle:Resto:cart.html.twig');
     }
 
