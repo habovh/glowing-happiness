@@ -13,12 +13,12 @@ class RestoController extends Controller {
 
     public function themeAction($themeid) 
     {
-        if($themeid == 1)
+        if($themeid == -1)
         {
             $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
             $themes = $repository->findAll();
 
-            return $this->render('RestoMainBundle:Resto:theme.html.twig', array('themes' => $themes));
+            return $this->render('RestoMainBundle:Resto:themes.html.twig', array('themes' => $themes));
         }
         else
         {
