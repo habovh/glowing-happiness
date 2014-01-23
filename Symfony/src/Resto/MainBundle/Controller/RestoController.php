@@ -10,8 +10,12 @@ class RestoController extends Controller {
         return $this->render('RestoMainBundle:Resto:index.html.twig');
     }
 
-    public function themeAction($themeid) {
-    	return $this->render('RestoMainBundle:Resto:theme.html.twig', array('themeid' => $themeid));
+    public function themeAction($themeid) 
+    {
+        $repository = $this->getDoctrine()->getManager->getRepository('RestoMainBundle:theme');
+        $restos = $repository->getRestos();
+
+    	return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
     }
 
     public function restoAction($restoid) {
@@ -20,5 +24,17 @@ class RestoController extends Controller {
 
     public function cartAction() {
     	return $this->render('RestoMainBundle:Resto:cart.html.twig');
+    }
+
+    public function registerAction() {
+    	return $this->render('RestoMainBundle:Resto:register.html.twig');
+    }
+
+    public function userAction($userid) {
+    	return $this->render('RestoMainBundle:Resto:user.html.twig');
+    }
+
+    public function profileAction() {
+    	return $this->render('RestoMainBundle:Resto:profile.html.twig');
     }
 }

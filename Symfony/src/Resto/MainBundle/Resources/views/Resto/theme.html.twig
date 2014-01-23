@@ -1,3 +1,11 @@
-theme
+theme<br/>Affichage du thème id : {{ themeid }}<br/>Doit afficher la liste des restaurants du thème, avec leur noms, accompagnés du nombre de plats de chacun.
 
-{{ themeid }}
+{% extends RestoMainBundle::layout.html.twig %}
+
+{% block theme %}
+
+{% for resto in restos %}
+	<a href="{{ path('resto_resto',{'restoid':resto.id}) }}">{{ resto.nom }}</a>
+{% endfor %}
+
+{% endblock %}
