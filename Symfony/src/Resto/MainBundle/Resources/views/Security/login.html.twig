@@ -7,18 +7,19 @@
     <div>{{ error|trans }}</div>
 {% endif %}
 
-<form action="{{ path("fos_user_security_check") }}" method="post">
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-    <label for="username">{{ "Nom d'utilisateur"|trans }}</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+<form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
+	<h2 class="form-signin-heading">Connexion</h2>
 
-    <label for="password">{{ 'Mot de passe'|trans }}</label>
-    <input type="password" id="password" name="_password" required="required" />
+	<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-    <label for="remember_me">{{ 'Se souvenir de moi '|trans }}</label>
-    <input  type="checkbox" id="remember_me" name="_remember_me" value="on" />
+	<input type="text" value="{{ last_username }}" id="username" class="input-block-level" placeholder="Nom d'utilisateur" name="_username" required="required"/>
 
-    <input class='btn btn-info' type="submit" id="_submit" name="_submit" value="{{ "C'est Parti !"|trans }}" />
+	<input type="password" id="password" class="input-block-level" placeholder="Mot de passe" name="_password" required="required"/>
+
+	<label type="checkbox" class="checkbox">
+	  <input type="checkbox" id="remember_me" name="_remember_me" value="on"/> Se souvenir de moi
+	</label>
+	<button class="btn btn-large btn-primary" type="submit" id="_submit" name="_submit">Connexion</button>
 </form>
 {% endblock fos_user_content %}
