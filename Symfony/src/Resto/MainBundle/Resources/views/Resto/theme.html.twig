@@ -4,7 +4,7 @@ theme<br/>Affichage du thème id : {{ themeid }}<br/>Doit afficher la liste des 
 
 {% block theme %}
 
-{% for resto in theme %}
+{% for resto in restos %}
 	<a href="{{ path('resto_resto',{'restoid':resto.id}) }}">{{ resto.nom }}</a>
 {% endfor %}
 
