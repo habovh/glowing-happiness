@@ -3,9 +3,9 @@
 namespace Resto\MainBundle\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface;
-use FOS\UserBundle\Form\Type\RegistrationFormType as BaseType;
+use FOS\UserBundle\Form\Type\LoginFormType as BaseType;
 
-class RegistrationFormType extends BaseType
+class LoginFormType extends BaseType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -14,13 +14,13 @@ class RegistrationFormType extends BaseType
         // add your custom field
 
 
-        $builder->add('username', null, array('label' => "Nom d'utilisateur", 'translation_domain' => 'FOSUserBundle'))
-            ->add('email', 'email', array('label' => 'Adresse E-Mail', 'translation_domain' => 'FOSUserBundle'))
+        $builder->add('username', null, array('label' => "Login", 'translation_domain' => 'FOSUserBundle'))
+            
             ->add('plainPassword', 'repeated', array(
                 'type' => 'password',
                 'options' => array('translation_domain' => 'FOSUserBundle' , 'label_attr'=> array ('class' => '')),
                 'first_options' => array('label' => 'Mot de passe'),
-                'second_options' => array('label' => 'Confimration du mot de passe'),
+                
                 'invalid_message' => 'fos_user.password.mismatch' ));
 
         $builder->add('nom');

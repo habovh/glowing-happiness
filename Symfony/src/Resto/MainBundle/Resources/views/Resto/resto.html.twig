@@ -5,8 +5,12 @@
 <!-- RESTO -->
 <div class="hero-unit">
 	<h1>{{ resto.nom }}</h1>
+	<p style="font-size: 0.6em; text-align: right;"><strong>Adresse : </strong>{{ resto.adresse }}</p>
+	<p style="font-size: 0.6em; text-align: right;"><strong>Mail : <a href="mailto:{{ resto.mail }}">{{ resto.mail }}</a></p>
+	<p style="font-size: 0.6em; text-align: right;"><strong>Tel : <a href="telto:{{ resto.tel }}">{{ resto.tel }}</a></p>
 	<hr>
 	<p>{{ resto.description }}</p>
+
 </div>
 
 <div class="row-fluid">
@@ -21,8 +25,20 @@
 				 	<h3>{{ unplat.nom }}</h3>
 				 	<p>{{ unplat.description }}</p>
 				 	<p>
+
 				 		<a class="btn btn-primary" href="{{ path('resto_ajoute_article',{'id': unplat.id, 'quantite':1}) }}">Ajouter au panier</a>
-				 		<a class="btn" href="">{{ unplat.prix }} €</a>
+				 	
+
+				 	
+				 		<div class="input-append spinner" data-trigger="spinner">
+						<input type="text" value="1" data-rule="quantity" name="quantite">
+						<div class="add-on"> 
+							<a href="javascript:;" class="icon-arrow-up" data-spin="up"><i class="icon-sort-up"></i></a> 
+							<a href="javascript:;" class="icon-arrow-down" data-spin="down"><i class="icon-sort-down"></i></a> 
+						</div>
+						</div>
+				 		<a class="btn disabled" href="#">{{ unplat.prix }} €</a>
+
 				 	</p>
 				 </div>
 			</div>
