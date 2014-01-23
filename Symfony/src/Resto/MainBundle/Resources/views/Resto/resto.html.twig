@@ -11,15 +11,25 @@
 
 <div class="row-fluid">
 	<div class="span12">
-		<form>
-			<table>
-				<tr><th>Nom du plat</th><td>Description</td><td>Prix</td></tr>
-			{% for unplat in plats %}
-				<tr><th>{{ unplat.nom }}</th><td>{{ unplat.description }}</td><td> {{ unplat.prix }} €</td></tr>
-			{% endfor %}
-			</table>
-		</form>
-	
+
+		
+		{% for unplat in plats %}
+		<div class="span3 plats">
+			<div class="thumbnail plat">
+				<img data-src="holder.js/150x150" alt="{{ unplat.nom }}" style="width: 150px; height: 150px;" src="{{ asset('images/plats/' ~ unplat.nom  ~ '.png') }}">
+				 <div class="caption">
+				 	<h3>{{ unplat.nom }}</h3>
+				 	<p>{{ unplat.description }}</p>
+				 	<p>
+				 		<a class="btn btn-primary" href="#">Ajouter au panier</a>
+				 		<a class="btn" href="">{{ unplat.prix }} €</a>
+				 	</p>
+				 </div>
+			</div>
+		</div>
+		{% endfor %}
+
+
 	</div>
 </div>
 
