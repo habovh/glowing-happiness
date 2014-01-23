@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Fast Lunch - {% if page_title is defined %} {{ page_title }} {% endif %}</title>
+    <title>Fast Lunch</title>
     <meta charset="UTF-8">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
@@ -26,37 +26,57 @@
       </div>
 
       <!-- BARRE DE NAVIGATION -->
-      <div class="navbar navbar-inverse">
+      <div class="navbar">
         <div class="navbar-inner">
           <div class="container-fluid">
             <div class="nav-collapse collapse">
               <ul class="nav">
-                <li><button class="btn btn-success" onclick="self.location.href='{{ path('resto_homepage') }}'"><span class="icon-home"></span> Acceuil</button></li>
+                <li>
+                  <a href="{{ path('resto_homepage') }}"><span class="icon-home"></span> Acceuil</a>
+                </li>
                 <li class="divider-vertical"></li>
-                <li><button class="btn btn-info" onclick="self.location.href='{{ path('resto_theme') }}'"><span class="icon-th"></span> Thèmes</button></li>
+                <li>
+                  <a href="{{ path('resto_theme') }}"><span class="icon-th"></span> Thèmes</a>
+                </li>
                 <li class="divider-vertical"></li>
-                <li><button class="btn btn-primary" onclick="location.href='mailto:info@fastlunch.fr'"><span class="icon-envelope"></span> Contact</button></li>
+                <li>
+                  <a href="mailto:info@fastlunch.fr"><span class="icon-envelope"></span> Contact</a>
+                </li>
                 <li class="divider-vertical"></li>
               </ul>
+
+              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
               <ul class="nav pull-right">
                 <li class="divider-vertical"></li>
-                <li><button class="btn btn-success" onclick="self.location.href='#'"><span class="icon-ok-sign"></span> Connexion</button></li>
+                <li>
+                  <a href="#"><span class="icon-wrench"></span> Administration</a>
+                </li>
                 <li class="divider-vertical"></li>
-                <li><button class="btn btn-info" onclick="self.location.href='#'"><span class="icon-plus-sign"></span> Inscription</button></li>
+                <li>
+                  <a href="{{ path('fos_user_security_logout') }}"><span class="icon-off"></span> Déconnexion</a>
+                </li>
                 <li class="divider-vertical"></li>
-                <button class="btn" onclick="self.location.href='#'"><span class="icon-shopping-cart"></span> Panier</button>
+                <li>
+                  <a href="{{ path('resto_panier') }}"><span class=" icon-shopping-cart"></span> Panier</a>
+                </li>
+              </ul>
+              <p class="navbar-text pull-right">Connecté en tant que <a href="" class="navbar-link">{{ app.user.username }}</a></p>
+              {% else %}
+              <ul class="nav pull-right">
+                <li class="divider-vertical"></li>
+                <li>
+                  <a href="{{ path('fos_user_security_login') }}"><span class="icon-ok-circle"></span> Connexion</a>
+                </li>
+                <li class="divider-vertical"></li>
+                <li>
+                  <a href="#"><span class="icon-plus-sign"></span> Inscription</a>
+                </li>
+                <li>
+                  <a href="{{ path('resto_panier') }}"><span class=" icon-shopping-cart"></span> Panier</a>
+                </li>
               </ul>
               <p class="navbar-text pull-right">Vous n'êtes pas connecté</p>
-              <!-- SI CONNECTER
-              <ul class="nav pull-right">
-                <li class="divider-vertical"></li>
-                <li><button class="btn btn-success" onclick="self.location.href='#'"><span class="icon-wrench"></span> Administration</button></li>
-                <li class="divider-vertical"></li>
-                <li><button class="btn btn-danger" onclick="self.location.href='#'"><span class="icon-off"></span> Déconnexion</button></li>
-                <li class="divider-vertical"></li>
-                <button class="btn" onclick="self.location.href='#'"><span class="icon-shopping-cart"></span> Panier</button>
-              </ul>
-              <p class="navbar-text pull-right">Connecté en tant que <a href="#" class="navbar-link">user</a></p>-->
+              {% endif %}
             </div>
           </div>
         </div>

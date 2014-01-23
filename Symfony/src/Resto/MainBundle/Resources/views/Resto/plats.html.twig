@@ -1,7 +1,5 @@
 {% extends "RestoMainBundle::resto.html.twig" %}
 
-{% set page_title = 'Plats' %}
-
 {% block plats %}
 {% for plat in plats %}
 	{{ plat.nom }} {{ plat.description }} {{ plat.prix }}
