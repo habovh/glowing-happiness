@@ -1,11 +1,18 @@
-
-
 {% extends "RestoMainBundle::layout.html.twig" %}
 
 {% block contenu %}
 
+<div class="row-fluid restaurants">
 {% for restaurant in restos %}
-	<a href="{{ path('resto_resto',{'restoid':restaurant.id}) }}">{{ restaurant.nom }}</a>
+	<div class="span4 restaurant">
+	<img class="img-circle" alt="{{restaurant.nom}}" style="width: 140px; height: 140px;" src="{{ asset('images/restaurant.jpg') }}">
+	<h2>{{restaurant.nom}}</h2>
+	<p>{{restaurant.description}}</p>
+	<p>{{restaurant.adresse}}</p>
+	<p>{{restaurant.mail}}</p>
+	<p><a class="btn" href="{{ path('resto_resto',{'restoid':restaurant.id})}}">Voir les plats »</a></p>
+	</div>
 {% endfor %}
+</div>
 
 {% endblock %}
