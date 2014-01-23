@@ -21,4 +21,17 @@ class RestoController extends Controller {
     public function cartAction() {
     	return $this->render('RestoMainBundle:Resto:cart.html.twig');
     }
+
+    public function registerAction() {
+    	return $this->render('RestoMainBundle:Resto:register.html.twig');
+    }
+
+    public function userAction($userid) {
+    	if ($userid == -1) {
+    		return $this->render('RestoMainBundle:Resto:personal_profile.html.twig');
+    	}
+    	else {
+    		return $this->render('RestoMainBundle:Resto:any_profile.html.twig');
+    	}
+    }
 }
