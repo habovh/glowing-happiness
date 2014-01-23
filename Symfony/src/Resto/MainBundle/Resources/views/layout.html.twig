@@ -33,16 +33,16 @@
           <div class="container-fluid">
             <div class="nav-collapse collapse">
               <ul class="nav">
-                <li><button class="btn btn-success" onclick="self.location.href='#'"><span class="icon-home"></span> Acceuil</button></li>
+                <li><button class="btn btn-success" onclick="self.location.href='{{ path('resto_homepage') }}'"><span class="icon-home"></span> Acceuil</button></li>
                 <li class="divider-vertical"></li>
-                <li><button class="btn btn-info" onclick="self.location.href='#'"><span class="icon-th"></span> Thèmes</button></li>
+                <li><button class="btn btn-info" onclick="self.location.href='{{ path('resto_theme') }}'"><span class="icon-th"></span> Thèmes</button></li>
                 <li class="divider-vertical"></li>
                 <li><button class="btn btn-primary" onclick="location.href='mailto:info@fastlunch.fr'"><span class="icon-envelope"></span> Contact</button></li>
                 <li class="divider-vertical"></li>
               </ul>
               <ul class="nav pull-right">
                 <li class="divider-vertical"></li>
-                <li><button class="btn btn-success" onclick="self.location.href='index.php?a=login'"><span class="icon-ok-sign"></span> Connexion</button></li>
+                <li><button class="btn btn-success" onclick="self.location.href='#'"><span class="icon-ok-sign"></span> Connexion</button></li>
                 <li class="divider-vertical"></li>
                 <li><button class="btn btn-info" onclick="self.location.href='index.php?a=signup'"><span class="icon-plus-sign"></span> Inscription</button></li>
                 <li class="divider-vertical"></li><p class="navbar-text pull-right">Vous n'êtes pas connecté</p>

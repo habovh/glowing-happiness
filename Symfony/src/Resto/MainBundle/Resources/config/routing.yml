@@ -4,9 +4,9 @@ resto_homepage:
 
 resto_theme:
     pattern: /theme/{themeid}
-    defaults: { _controller: RestoMainBundle:Resto:theme }
+    defaults: { _controller: RestoMainBundle:Resto:theme, themeid: -1 }
     requirements:
-        themeid: \d+
+        themeid: \d*
 
 resto_resto:
     pattern: /resto/{restoid}

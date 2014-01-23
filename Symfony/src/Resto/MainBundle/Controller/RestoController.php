@@ -13,12 +13,24 @@ class RestoController extends Controller {
         return $this->render('RestoMainBundle:Resto:index.html.twig');
     }
 
-    public function themeAction($themeid) {
 
-        $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
-        $restos = $repository->getRestos();
+    public function themeAction($themeid) 
+    {
+        if($themeid == -1)
+        {
+            $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
+            $themes = $repository->findAll();
 
-    	return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
+            return $this->render('RestoMainBundle:Resto:themes.html.twig', array('themes' => $themes));
+        }
+        else
+        {
+             $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
+             $restos = $repository->getRestos();
+
+        return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
+        }
+
     }
 
     public function restoAction($restoid) {
@@ -31,6 +43,7 @@ class RestoController extends Controller {
 
     public function cartAction() {
 
+<<<<<<< HEAD
         $manager = $this->getDoctrine()->getManager();
 
         $data = array(
@@ -190,6 +203,8 @@ class RestoController extends Controller {
 
         $manager->flush();
 
+=======
+>>>>>>> bf3e00c1df83c25e0e32705cb91e2a1759bd96db
 
     	return $this->render('RestoMainBundle:Resto:cart.html.twig');
     }
