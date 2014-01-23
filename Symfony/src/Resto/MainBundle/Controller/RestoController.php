@@ -53,7 +53,7 @@ class RestoController extends Controller {
 
         $total = $this->totalPanier();
 
-        return $this->render('RestoMainBundle:Resto:cart.html.twig', array('panier' => ,$panier , 'total' => $total));
+        return $this->render('RestoMainBundle:Resto:cart.html.twig', array('panier' => $panier , 'total' => $total));
 
     	
     }
@@ -147,7 +147,7 @@ class RestoController extends Controller {
         $session = $this->getRequest()->getSession();
         if(!$session->has('panier'))
         {
-           $session->set('panier' => array(
+           $session->set('panier',  array(
                 'idprod' => array()  // indice 'quantite' : quantite / indice 'prix' : prix
                 )
            );
