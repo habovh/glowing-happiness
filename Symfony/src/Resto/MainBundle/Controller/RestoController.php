@@ -30,10 +30,6 @@ class RestoController extends Controller {
     	return $this->render('RestoMainBundle:Resto:cart.html.twig');
     }
 
-    public function registerAction() {
-    	return $this->render('RestoMainBundle:Resto:register.html.twig');
-    }
-
     public function userAction($userid) {
     	return $this->render('RestoMainBundle:Resto:user.html.twig');
     }
