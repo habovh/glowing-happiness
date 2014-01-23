@@ -1,6 +1,10 @@
-.header
+.page
 {
 	background-image: url('images/gradient.png');
+	background-repeat: repeat-x;
+}
+.header
+{
 	border-radius: 4px;
 	margin-bottom: 20px;
 }
