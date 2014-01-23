@@ -8,7 +8,7 @@
             {{ 'Se Déconnecter'|trans({}, 'FOSUserBundle') }}
         </a>
     {% else %}
-        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        <a href="{{ path('fos_user_security_login') }}">{{ 'Se connecter'|trans({}, 'FOSUserBundle') }}</a>
     {% endif %}
 </div>
 
@@ -24,8 +24,6 @@
 
 <div>
     {% block fos_user_content %}
-
     {% endblock fos_user_content %}
-
 </div>
 {% endblock %}

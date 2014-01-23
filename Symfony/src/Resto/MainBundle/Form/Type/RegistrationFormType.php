@@ -20,7 +20,7 @@ class RegistrationFormType extends BaseType
                 'type' => 'password',
                 'options' => array('translation_domain' => 'FOSUserBundle' , 'label_attr'=> array ('class' => '')),
                 'first_options' => array('label' => 'Mot de passe'),
-                'second_options' => array('label' => 'Confimration du mot de passe'),
+                'second_options' => array('label' => 'Confirmation du mot de passe'),
                 'invalid_message' => 'fos_user.password.mismatch' ));
 
         $builder->add('nom');
