@@ -15,7 +15,7 @@ class RegistrationFormType extends BaseType
 
 
         $builder->add('username', null, array('label' => "Nom d'utilisateur", 'translation_domain' => 'FOSUserBundle'))
-            ->add('email', 'email', array('label' => 'Adresse E-Mail', 'translation_domain' => 'FOSUserBundle'))
+            ->add('email', 'email', array('label' => 'Adresse eMail', 'translation_domain' => 'FOSUserBundle'))
             ->add('plainPassword', 'repeated', array(
                 'type' => 'password',
                 'options' => array('translation_domain' => 'FOSUserBundle' , 'label_attr'=> array ('class' => '')),
@@ -28,6 +28,8 @@ class RegistrationFormType extends BaseType
         $builder->add('tel');
         //...............
         //Add all your properties here with $builder->add('property name')
+
+
     }
 
     public function getName()

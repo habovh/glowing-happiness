@@ -3,12 +3,16 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {% block fos_user_content %}
-{% if error %}
-    <div>{{ error|trans }}</div>
-{% endif %}
-
 
 <form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
+
+{% if error %}
+    <div></div>
+    <div class="alert alert-error">
+    	Erreur d'identifiant ou mot de passe.
+	</div>
+{% endif %}
+
 	<h2 class="form-signin-heading">Connexion</h2>
 
 	<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
