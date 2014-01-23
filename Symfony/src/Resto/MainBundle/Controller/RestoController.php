@@ -43,7 +43,6 @@ class RestoController extends Controller {
 
     public function cartAction() {
 
-
         $manager = $this->getDoctrine()->getManager();
 
         $data = array(
