@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>Fast Lunch - {% if page_title is defined %} {{ page_title }} {% endif %}</title>
     <meta charset="UTF-8">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
