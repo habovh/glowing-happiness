@@ -18,10 +18,6 @@ resto_panier:
     pattern: /cart/
     defaults: { _controller: RestoMainBundle:Resto:cart }
 
-#resto_register:
-#    pattern: /register/
-#    defaults: { _controller: RestoMainBundle:Resto:register }
-
 resto_user:
     pattern: /user/{userid}
     defaults: { _controller: RestoMainBundle:Resto:user }
