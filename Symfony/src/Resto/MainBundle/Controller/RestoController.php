@@ -94,11 +94,19 @@ class RestoController extends Controller {
         $resto = $plat->getRestaurant();
         $plats = $resto->getPlats();
 
+        if(isset($panier[$id]['quantite']))
+        {
+            $quantiteO = $panier[$id]['quantite'];
+        }
+        else
+        {
+            $quantiteO = 0;
+        }
         
         if (!is_null($plat)) {
             $panier[$id]['id'] = $plat->getId();
-            $panier[$id]['quantite'] = $quantite;
-            $panier[$id]['prix'] = $plat->getPrix();
+            $panier[$id]['quantite'] = $quantiteO + $quantite;
+            $panier[$id]['prix'] = ($plat->getPrix() * $panier[$id]['quantite']);
             $panier[$id]['nom'] = $plat->getNom();
 
         }
@@ -122,9 +130,10 @@ class RestoController extends Controller {
         }
 
 
-        $total = $this->totalPanier();
+        
         $session = $this->getRequest()->getSession();
         $session->set('panier', $panier);
+        $total = $this->totalPanier();
 
         return $this->render('RestoMainBundle:Resto:cart.html.twig', array('panier' => $panier , 'total' => $total));
 

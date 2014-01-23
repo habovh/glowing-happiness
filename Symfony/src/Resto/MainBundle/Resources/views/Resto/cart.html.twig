@@ -4,7 +4,7 @@
 <h1>Votre panier : </h1>
 
 <table>
-	<tr><th>Nom de l'article</th><th>Quantité</th><th>Prix unitaire</th></tr>
+	<tr><th>Nom de l'article</th><th>Quantité</th><th>Prix</th></tr>
 	{% for entree in panier %}
 	{% if entree.nom is defined %}
 		<tr><td> {{ entree.nom }} </td><td> {{ entree.quantite }} </td><td> {{ entree.prix }} </td> <td> {% if entree.id is defined %}
