@@ -23,10 +23,16 @@ class Restaurant
 
 
     /**
-    * @ORM\ManyToOne(targetEntity="Resto\MainBundle\Entity\Theme", inversedBy="theme"))
+    * @ORM\ManyToOne(targetEntity="Resto\MainBundle\Entity\Theme", inversedBy="theme")
     * @ORM\JoinColumn(nullable=false)
     */
     private $theme;
+
+
+    /**
+    * @ORM\OneToMany(targetEntity="Resto\MainBundle\Entity\Plat", mappedBy="plat")
+    */
+    private $plats;
 
     /**
      * @var string
