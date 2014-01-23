@@ -62,7 +62,7 @@
                   <a href="{{ path('resto_panier') }}"><span class=" icon-shopping-cart"></span> Panier</a>
                 </li>
                 <li class="divider-vertical"></li>
-                <li><a href="{{ path('resto_panier') }}"><span class="badge badge-inverse">{{ render(controller("RestoMainBundle:Resto:total")) }} €</span></li><a/>
+                <li><a href="{{ path('resto_panier') }}"><span class="badge badge-inverse">{{ render(controller("RestoMainBundle:Resto:total")) }} €</span></li></a>
               </ul>
               <p class="navbar-text pull-right">Connecté en tant que <a href="" class="navbar-link">{{ app.user.username }}</a></p>
               {% else %}
