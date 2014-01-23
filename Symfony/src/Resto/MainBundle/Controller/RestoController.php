@@ -221,9 +221,6 @@ class RestoController extends Controller {
     	return $this->render('RestoMainBundle:Resto:user.html.twig', array('user' => $user));
     }
 
-    public function profileAction() {
-    	return $this->render('RestoMainBundle:Resto:profile.html.twig');
-    }
 
     public function platAction($id)
     {

@@ -24,10 +24,6 @@ resto_user:
     requirements:
         userid: \d+
 
-restu_profile:
-    pattern: /profile/
-    defaults: { _controller: RestoMainBundle:Resto:profile }
-
 
 
 
