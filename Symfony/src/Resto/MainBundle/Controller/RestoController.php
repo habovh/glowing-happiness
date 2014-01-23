@@ -26,7 +26,9 @@ class RestoController extends Controller {
         else
         {
              $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
-             $restos = $repository->getRestaurants();
+             $theme = $repository->find($themeid);
+
+             $restos = $theme->getRestaurants();
 
         return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
         }
