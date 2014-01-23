@@ -17,4 +17,8 @@ class RestoController extends Controller {
     public function restoAction($restoid) {
     	return $this->render('RestoMainBundle:Resto:resto.html.twig', array('restoid' => $restoid));
     }
+
+    public function cartAction() {
+    	return $this->render('RestoMainBundle:Resto:cart.html.twig');
+    }
 }

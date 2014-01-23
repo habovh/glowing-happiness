@@ -13,3 +13,7 @@ resto_resto:
     defaults: { _controller: RestoMainBundle:Resto:resto }
     requirements:
         restoid: \d+
+
+resto_panier:
+    pattern: /cart/
+    defaults: { _controller: RestoMainBundle:Resto:cart }
