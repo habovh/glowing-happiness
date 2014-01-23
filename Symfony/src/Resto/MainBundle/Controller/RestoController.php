@@ -18,8 +18,12 @@ class RestoController extends Controller {
     	return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
     }
 
-    public function restoAction($restoid) {
-    	return $this->render('RestoMainBundle:Resto:resto.html.twig', array('restoid' => $restoid));
+    public function restoAction($restoid)
+    {
+        $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:resto');
+        $resto = $repository->find($restoid);
+
+    	return $this->render('RestoMainBundle:Resto:resto.html.twig', array('resto' => $resto));
     }
 
     public function cartAction() {
