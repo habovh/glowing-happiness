@@ -19,3 +19,6 @@ Symfony/app/logs/*
 Symfony/vendor/
 Symfony/app/config/parameters.yml
 Symfony/composer.lock
+
+
+Thumbs.db
