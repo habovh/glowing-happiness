@@ -26,7 +26,13 @@
 				 	<p>{{ unplat.description }}</p>
 				 	<p>
 				 		<a class="btn btn-primary" href="#">Ajouter au panier</a>
-				 		<a class="btn" href="">{{ unplat.prix }} €</a>
+				 		<div class="input-append spinner" data-trigger="spinner">
+						<input type="text" value="1" data-rule="quantity">
+						<div class="add-on"> 
+							<a href="javascript:;" class="icon-arrow-up" data-spin="up"><i class="icon-sort-up"></i></a> <a 							href="javascript:;" class="icon-arrow-down" data-spin="down"><i class="icon-sort-down"></i></a> 
+						</div>
+						</div>
+				 		<a class="btn disabled" href="#">{{ unplat.prix }} €</a>
 				 	</p>
 				 </div>
 			</div>
