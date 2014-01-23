@@ -1,0 +1,7 @@
+parameters:
+#    resto_main.example.class: Resto\MainBundle\Example
+
+services:
+#    resto_main.example:
+#        class: %resto_main.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

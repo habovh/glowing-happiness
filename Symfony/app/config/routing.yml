@@ -1,3 +1,7 @@
+resto_main:
+    resource: "@RestoMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
 pussy_patrol_main:
     resource: "@PussyPatrolMainBundle/Resources/config/routing.yml"
     prefix:   /
