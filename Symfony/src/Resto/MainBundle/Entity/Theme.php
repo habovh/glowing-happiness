@@ -36,7 +36,7 @@ class Theme
     private $description;
 
     /**
-    * @ORM\OneToMany(targetEntity="Resto\MainBundle\Entity\Restaurant", mappedBy="restaurants")
+    * @ORM\OneToMany(targetEntity="Resto\MainBundle\Entity\Restaurant", mappedBy="restaurant")
     */
     private $restaurants;
 
