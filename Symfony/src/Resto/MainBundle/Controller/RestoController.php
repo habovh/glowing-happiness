@@ -11,9 +11,10 @@ use Resto\MainBundle\Entity\Plat;
 class RestoController extends Controller {
 
     public function indexAction() {
+         $panier = $this->getPanier();
         if(isset($panier))
         {
-             $panier = $this->getPanier();
+            
 
         $total = $this->totalPanier();
         }
@@ -28,9 +29,10 @@ class RestoController extends Controller {
 
     public function themeAction($themeid)
     {
+          $panier = $this->getPanier();
         if(isset($panier))
         {
-             $panier = $this->getPanier();
+           
 
         $total = $this->totalPanier();
         }
@@ -61,9 +63,10 @@ class RestoController extends Controller {
     }
 
     public function restoAction($restoid) {
+         $panier = $this->getPanier();
         if(isset($panier))
         {
-             $panier = $this->getPanier();
+            
 
         $total = $this->totalPanier();
         }
@@ -104,9 +107,10 @@ class RestoController extends Controller {
 
     public function platAction($id)
     {
+          $panier = $this->getPanier();
         if(isset($panier))
         {
-             $panier = $this->getPanier();
+           
 
         $total = $this->totalPanier();
         }
