@@ -23,7 +23,7 @@ class RestoController extends Controller {
         else
         {
              $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
-             $restos = $repository->getRestos();
+             $restos = $repository->getRestaurants();
 
         return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
         }
@@ -32,7 +32,7 @@ class RestoController extends Controller {
 
     public function restoAction($restoid) {
 
-        $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:resto');
+        $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:restaurant');
         $resto = $repository->find($restoid);
 
     	return $this->render('RestoMainBundle:Resto:resto.html.twig', array('resto' => $resto));
@@ -54,5 +54,17 @@ class RestoController extends Controller {
 
     public function profileAction() {
     	return $this->render('RestoMainBundle:Resto:profile.html.twig');
+    }
+
+    public function platAction($id)
+    {
+        if($id == -1)
+        {
+            $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:restaurant');
+            $plats = $repository->getPlats();
+
+            return $this->render('RestoMainBundle:Resto:plats.html.twig', array('plats' => $plats));
+        }
+
     }
 }

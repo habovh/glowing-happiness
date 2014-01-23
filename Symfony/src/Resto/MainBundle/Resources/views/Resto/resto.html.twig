@@ -14,6 +14,6 @@ resto.html.twig<br/>
 
 	{{ resto.note }}
 
-	{% block plats %}
+	{{ render(controller("RestoMainBundle:Resto:plat")) }}
 
 {% endblock %}
