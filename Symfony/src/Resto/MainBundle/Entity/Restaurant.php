@@ -21,6 +21,13 @@ class Restaurant
      */
     private $id;
 
+
+    /**
+    * @ORM\ManyToOne(targetEntity="Sdz\BlogBundle\Entity\Article")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $theme;
+
     /**
      * @var string
      *
@@ -41,6 +48,13 @@ class Restaurant
      * @ORM\Column(name="adresse", type="string", length=255)
      */
     private $adresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mail", type="string", length=255)
+     */
+    private $mail;
 
     /**
      * @var string
@@ -157,6 +171,28 @@ class Restaurant
     public function getTel()
     {
         return $this->tel;
+    }
+
+    /**
+     * Set Mail
+     *
+     * @return string 
+     */
+    public function setMail($mail)
+    {
+        $this->mail = $mail;
+
+        return $this;
+    }
+
+    /**
+     * Get Mail
+     *
+     * @return string 
+     */
+    public function getMail()
+    {
+        return $this->mail;
     }
 
     /**

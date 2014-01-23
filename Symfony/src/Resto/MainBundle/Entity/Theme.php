@@ -31,9 +31,9 @@ class Theme
     /**
      * @var string
      *
-     * @ORM\Column(name="decription", type="text")
+     * @ORM\Column(name="description", type="text")
      */
-    private $decription;
+    private $description;
 
 
     /**
@@ -70,25 +70,25 @@ class Theme
     }
 
     /**
-     * Set decription
+     * Set description
      *
-     * @param string $decription
+     * @param string $description
      * @return Theme
      */
-    public function setDecription($decription)
+    public function setDescription($description)
     {
-        $this->decription = $decription;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get decription
+     * Get description
      *
      * @return string 
      */
-    public function getDecription()
+    public function getDescription()
     {
-        return $this->decription;
+        return $this->description;
     }
 }

@@ -10,6 +10,7 @@ class RestoController extends Controller {
         return $this->render('RestoMainBundle:Resto:index.html.twig');
     }
 
+<<<<<<< HEAD
     public function themeAction($themeid) 
     {
         if($themeid == -1)
@@ -27,10 +28,18 @@ class RestoController extends Controller {
         return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
         }
        
+=======
+    public function themeAction($themeid) {
+
+        $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:theme');
+        $restos = $repository->getRestos();
+
+    	return $this->render('RestoMainBundle:Resto:theme.html.twig', array('restos' => $restos));
+>>>>>>> a7855bb0a6dc734e99e4f1a36310a032d8832c3b
     }
 
-    public function restoAction($restoid)
-    {
+    public function restoAction($restoid) {
+
         $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:resto');
         $resto = $repository->find($restoid);
 
@@ -44,7 +53,11 @@ class RestoController extends Controller {
     }
 
     public function userAction($userid) {
-    	return $this->render('RestoMainBundle:Resto:user.html.twig');
+
+        $repository = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:user');
+        $user = $repository -> find($userid);
+
+    	return $this->render('RestoMainBundle:Resto:user.html.twig', array('user' => $user));
     }
 
     public function profileAction() {
