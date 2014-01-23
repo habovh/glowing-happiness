@@ -18,16 +18,74 @@
 {
 	text-align: center;
 	min-width: 200px;
+	padding: 4px;
 }
 .row-fluid [class*="span"]
 {
 	margin-left: 0px;
 }
-
+.restaurant
+{
+	text-align: center;
+	min-width: 200px;
+	padding: 4px;
+}
 .plats
 {
 	text-align: center;
-	min-width: 150px;
-	margin-right: 20px;
-	margin-bottom: 20px;
+}
+
+div.span3.plats {
+	width: 23%;
+	margin-right: 2%;
+}
+
+div.thumbnail.plat {
+	overflow: hidden;
+	height: inherit;
+	min-height: 390px;
+	width: 100%;
+	padding-top: 15px;
+	margin-bottom: 15px;
+	position: relative;
+}
+
+div.caption {
+	bottom: 0 !important;
+	bottom: -1px;
+	vertical-align: bottom;
+	position: absolute;
+	width: 92%;
+	margin: 0 auto;
+}
+
+.plat > img {
+	border-radius: 4px;
+	box-shadow: 0 0 6px lightgrey;
+}
+
+
+div .span3 {
+	height: inherit;
+	width: inherit;
+}
+
+
+
+@media(max-width: 1500px) {
+	div.span3.plats {
+		width: 31%;
+	}
+}
+
+@media(max-width: 1000px) {
+	div.span3.plats {
+		width: 48%;
+	}
+}
+
+@media(max-width: 800px) {
+	div.span3.plats {
+		width: 100%;
+	}
 }

@@ -84,22 +84,29 @@ class RestoController extends Controller {
     public function ajouteArticleAction($id, $quantite)  // Ajoute un article ( plat ) au panier
     {
         $panier = $this->getPanier();
+        
 
         $repo = $this->getDoctrine()->getManager()->getRepository('RestoMainBundle:Plat');
-
-
         $plat = $repo->find($id);
 
 
+        $resto = $plat->getRestaurant();
+        $plats = $resto->getPlats();
+
+        
         if (!is_null($plat)) {
             $panier[$id]['quantite'] = $quantite;
             $panier[$id]['prix'] = $plat->getPrix();
-            $panier[$id]['nom'] = $plat->geNom();
+            $panier[$id]['nom'] = $plat->getNom();
 
         }
 
+        $session = $this->getRequest()->getSession();
+        $session->set('panier', $panier);
 
+        
 
+        return $this->render('RestoMainBundle:Resto:resto.html.twig', array('resto' => $resto, 'plats' => $plats));
     }
 
     public function supprimeArticleAction($id)  
@@ -125,8 +132,10 @@ class RestoController extends Controller {
         
         $total = 0;
 
+        
         foreach ($panier as $id => $attributs) {
-            if (!is_null($plat)){
+            if(isset($attributs['prix']))
+            {
                 $total += $attributs['prix'];
             }
         }
@@ -148,7 +157,7 @@ class RestoController extends Controller {
         if(!$session->has('panier'))
         {
            $session->set('panier',  array(
-                'idprod' => array()  // indice 'quantite' : quantite / indice 'prix' : prix
+                // indice 'quantite' : quantite / indice 'prix' : prix
                 )
            );
         }

@@ -8,8 +8,11 @@
 	<img class="img-circle" alt="{{restaurant.nom}}" style="width: 140px; height: 140px;" src="{{ asset('images/themes/defaut.png') }}">
 	<h2>{{restaurant.nom}}</h2>
 	<p>{{restaurant.description}}</p>
-	<p>{{restaurant.adresse}}</p>
-	<p>{{restaurant.mail}}</p>
+	<hr>
+	<p><strong>Adresse :</strong> {{restaurant.adresse}}</p>
+	<p><strong>Mail :</strong> <a href="mailto:{{restaurant.mail}}">{{restaurant.mail}}</a></p>
+	<p><strong>Tel :</strong> <a href="telto:{{restaurant.tel}}">{{restaurant.tel}}</a></p>
+	<hr>
 	<p><a class="btn" href="{{ path('resto_resto',{'restoid':restaurant.id})}}">Voir les plats »</a></p>
 	</div>
 {% endfor %}
