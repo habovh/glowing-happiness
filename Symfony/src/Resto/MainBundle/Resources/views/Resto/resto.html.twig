@@ -21,7 +21,7 @@
 				 	<h3>{{ unplat.nom }}</h3>
 				 	<p>{{ unplat.description }}</p>
 				 	<p>
-				 		<a class="btn btn-primary" href="#">Ajouter au panier</a>
+				 		<a class="btn btn-primary" href="{{ path('resto_ajoute_article',{'id': unplat.id, 'quantite':1}) }}">Ajouter au panier</a>
 				 		<a class="btn" href="">{{ unplat.prix }} €</a>
 				 	</p>
 				 </div>
