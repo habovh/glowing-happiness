@@ -31,11 +31,10 @@ class RestoController extends Controller {
     }
 
     public function userAction($userid) {
-    	if ($userid == -1) {
-    		return $this->render('RestoMainBundle:Resto:personal_profile.html.twig');
-    	}
-    	else {
-    		return $this->render('RestoMainBundle:Resto:any_profile.html.twig');
-    	}
+    	return $this->render('RestoMainBundle:Resto:user.html.twig');
+    }
+
+    public function profileAction() {
+    	return $this->render('RestoMainBundle:Resto:profile.html.twig');
     }
 }
