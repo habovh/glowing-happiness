@@ -16,7 +16,7 @@
 		{% for unplat in plats %}
 		<div class="span3 plats">
 			<div class="thumbnail plat">
-				<img data-src="holder.js/150x150" alt="{{ unplat.nom }}" style="width: 150px; height: 150px;" src="{{ asset('images/plats/' ~ unplat.nom  ~ '.png') }}">
+				<img data-src="holder.js/150x150" alt="{{ unplat.nom }}" style="width: 150px; height: 150px;" src="{{ asset('images/plats/originales/' ~ unplat.photo) }}">
 				 <div class="caption">
 				 	<h3>{{ unplat.nom }}</h3>
 				 	<p>{{ unplat.description }}</p>
