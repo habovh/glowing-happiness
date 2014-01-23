@@ -28,7 +28,6 @@ resto_ajoute_article:
 resto_supprime_article:
     pattern: /supprimeArticle/{id}
     defaults: { _controller: RestoMainBundle:Resto:supprimeArticle }
-    
 
 
 resto_user:
