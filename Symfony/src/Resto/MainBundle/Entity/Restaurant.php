@@ -21,6 +21,13 @@ class Restaurant
      */
     private $id;
 
+
+    /**
+    * @ORM\ManyToOne(targetEntity="Sdz\BlogBundle\Entity\Article")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $theme;
+
     /**
      * @var string
      *
