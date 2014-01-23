@@ -23,10 +23,10 @@ class Plat
 
 
     /**
-    * @ORM\ManyToOne(targetEntity="Resto\MainBundle\Entity\Restaurants", inversedBy="restaurant")
+    * @ORM\ManyToOne(targetEntity="Resto\MainBundle\Entity\Restaurant", inversedBy="restaurant")
     * @ORM\JoinColumn(nullable=false)
     */
-    private $restaurant;
+    private $restaurants;
 
     /**
      * @var string
@@ -160,26 +160,28 @@ class Plat
         return $this->photo;
     }
 
+  
+
     /**
-     * Set restaurant
+     * Set restaurants
      *
-     * @param \Resto\MainBundle\Entity\Restaurants $restaurant
+     * @param \Resto\MainBundle\Entity\Restaurant $restaurants
      * @return Plat
      */
-    public function setRestaurant(\Resto\MainBundle\Entity\Restaurants $restaurant)
+    public function setRestaurants(\Resto\MainBundle\Entity\Restaurant $restaurants)
     {
-        $this->restaurant = $restaurant;
+        $this->restaurants = $restaurants;
 
         return $this;
     }
 
     /**
-     * Get restaurant
+     * Get restaurants
      *
-     * @return \Resto\MainBundle\Entity\Restaurants 
+     * @return \Resto\MainBundle\Entity\Restaurant 
      */
-    public function getRestaurant()
+    public function getRestaurants()
     {
-        return $this->restaurant;
+        return $this->restaurants;
     }
 }
